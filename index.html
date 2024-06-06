@@ -1,0 +1,66 @@
+<!doctype html><html><head><style type="text/css">th, td {
+  border: 0.5px solid black;
+  border-radius: 5px;
+  padding:4px 6px;
+    font-size: 1.25rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--accent);
+    border-radius: 10px;
+    text-align: left;
+    outline: rgba(255,0,0,0);
+  wdith:75%;
+  
+}
+html, body {
+  font-family: 'Product Sans', sans-serif;
+font-family: 'Product Sans Thin', sans-serif;
+font-family: 'Product Sans Light', sans-serif;
+font-family: 'Product Sans Medium', sans-serif;
+font-family: 'Product Sans Black', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+/*   margin-top: 2.5rem; */
+  border: 1px solid rgb(0,0,0);
+  border-radius: 10px;
+}
+.tinput{
+
+}
+.bte{
+    padding: 3px 5px;
+    font-size: 1.25rem;
+    text-align: left;
+    outline: rgba(255,0,0,0);
+}
+
+.bbte{
+    padding: 3px 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    outline: rgba(255,0,0,0);
+}
+</style></head><body><!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
+	<link href="http://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8" />
+
+</head>
+
+<body>
+	<main>
+	</main>
+	<script src="sketch.js"></script>
+</body>
+
+</html><script type="text/javascript">function setup() { createCanvas(0, 0), clearStorage(), storeItem("run", !1), weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], monthes = ["", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d = new Date, cmonth = monthes[month()], cday = weekday[d.getDay()], nday = weekday[d.getDay() + 1], storeItem("m", cmonth), storeItem("cd", cday), storeItem("nd", nday) } function es(e) { return fetch(e).then(e => e.text()) } function createTable(e) { 1 === getItem("run") && (T = createElement("p", cday + " " + cmonth + " " + day() + " " + year() + " ㅤ AM (Morning)")).class("bte"), 2 === getItem("run") && (t = createElement("p", cday + " " + cmonth + " " + day() + " " + year() + " ㅤ PM (Evening)")).class("bte"), 3 === getItem("run") && (t = createElement("p", nday + " " + cmonth + " " + (day() + 1) + " " + year() + " ㅤ AM (Morning)")).class("bte"), 4 === getItem("run") && (t = createElement("p", nday + " " + cmonth + " " + (day() + 1) + " " + year() + " ㅤ PM (Evening)")).class("bte"); var r = document.createElement("table"); r.setAttribute("class", "tinput"); var i = document.createElement("tbody"); i.setAttribute("class", "tinput"), storeItem("run", getItem("run") + 1), e.forEach(function (e) { var r = document.createElement("tr"); e.forEach(function (e) { var i = document.createElement("td"); i.appendChild(document.createTextNode(e)), r.appendChild(i) }), i.appendChild(r) }), r.appendChild(i), document.body.appendChild(r) } function ocreateTable(e) { var r = document.createElement("table"); r.setAttribute("class", "tinput"); var i = document.createElement("tbody"); i.setAttribute("class", "tinput"), storeItem("run", getItem("run") + 1), e.forEach(function (e) { var r = document.createElement("tr"); e.forEach(function (e) { var i = document.createElement("td"); i.appendChild(document.createTextNode(e)), r.appendChild(i) }), i.appendChild(r) }), r.appendChild(i), document.body.appendChild(r) } function myStats() { let e = ["Cloud development not observed or not observable", "Clouds generally dissolving or becoming less developed", "State of sky on the whole unchanged", "Clouds generally forming or developing", "Visibility reduced by smoke, e.g. veldt or forest fires, industrial smoke or volcanic ashes", "Haze", "Widespread dust in suspension in the air, not raised by wind at or near the station at the time of observation", "Dust or sand raised by wind at or near the station at the time of observation, but no well developed dust whirl(s) or sand whirl(s), and no duststorm or sandstorm seen", "Well developed dust whirl(s) or sand whirl(s) seen at or near the station during the preceding hour or at the time ot observation, but no duststorm or sandstorm", "Duststorm or sandstorm within sight at the time of observation, or at the station during the preceding hour", "Mist", "Patches", "More or less continuous", "Lightning visible, no thunder heard", "Precipitation within sight, not reaching the ground or the surface of the sea", "Precipitation within sight, reaching the ground or the surface of the sea, but distant, i.e. estimated to be more than 5 km from the station", "Precipitation within sight, reaching the ground or the surface of the sea, near to, but not at the station", "Thunderstorm, but no precipitation at the time of observation", "Squalls", "Funnel cloud(s)**", "Drizzle (not freezing) or snow grains", "Rain (not freezing)", "Snow", "Rain and snow or ice pellets", "Freezing drizzle or freezing rain", "Shower(s) of rain", "Shower(s) of snow, or of rain and snow", "Shower(s) of hail*, or of rain and hail*", "Fog or ice fog", "Thunderstorm (with or without precipitation)", "Slight or moderate duststorm or sandstorm", "Slight or moderate duststorm or sandstorm", "Slight or moderate duststorm or sandstorm", "Severe duststorm or sandstorm", "Severe duststorm or sandstorm", "Severe duststorm or sandstorm", "Slight or moderate blowing snow", "Heavy drifting snow", "Slight or moderate blowing snow", "Fog or ice fog at a distance at the time of observation, but not at the station during the preceding hour, the fog or ice fog extending to a level above that of the observer", "Fog or ice fog in patches", "Fog or ice fog, sky visible", "Fog or ice fog, sky invisible", "Fog or ice fog, sky visible", "Fog or ice fog, sky invisible", "Fog or ice fog, sky visible", "Fog or ice fog, sky invisible", "Fog, depositing rime, sky visible", "Fog, depositing rime, sky invisible", "Drizzle, not freezing, intermittent", "Drizzle, not freezing, continuous", "Drizzle, not freezing, intermittent", "Drizzle, not freezing, continuous", "Drizzle, not freezing, intermittent", "Drizzle, not freezing, continuous", "Drizzle, freezing, slight", "Drizzle, freezing, moderate or heavy (dence)", "Drizzle and rain, slight", "Drizzle and rain, moderate or heavy", "Rain, not freezing, intermittent", "Rain, not freezing, continuous", "Rain, not freezing, intermittent", "Rain, not freezing, continuous", "Rain, not freezing, intermittent", "Rain, not freezing, continuous", "Rain, freezing, slight", "Rain, freezing, moderate or heavy (dence)", "Rain or drizzle and snow, slight", "Rain or drizzle and snow, moderate or heavy", "Intermittent fall of snowflakes", "Continuous fall of snowflakes", "Intermittent fall of snowflakes", "Continuous fall of snowflakes", "Intermittent fall of snowflakes", "Continuous fall of snowflakes", "Diamond dust (with or without fog)", "Snow grains (with or without fog)", "Isolated star-like snow crystals (with or without fog)", "Ice pellets", "Rain shower(s), slight", "Rain shower(s), moderate or heavy", "Rain shower(s), violent", "Shower(s) of rain and snow mixed, slight", "Shower(s) of rain and snow mixed, slight", "Shower(s) of rain and snow mixed, moderate or heavy", "Snow shower(s), slight", "Snow shower(s), moderate or heavy", "Shower(s) of snow pellets or small hail, with or without rain or rain and snow mixed", "Shower(s) of hail*, with or without rain or rain and snow mixed, not associated with thunder", "Shower(s) of hail*, with or without rain or rain and snow mixed, not associated with thunder", "Slight rain at time of observation", "Moderate or heavy rain at time of observation", "Slight snow, or rain and snow mixed or hail** at time of observation", "Moderate or heavy snow, or rain and snow mixed or hail** at time of observation", "Thunderstorm, slight or moderate, without hail** but with rain and/or snow at time of observation", "Thunderstorm, slight or moderate, with hail** at time of observation", "Thunderstorm, heavy, without hail** but with rain and/or snow at time of observation", "Thunderstorm combined with duststorm or sandstorm at time of observation", "Thunderstorm, heavy, with hail** at time of observation"]; console.log(e), wordm = "https://api.open-meteo.com/v1/forecast?latitude=40.8259&longitude=-74.209&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,rain&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York", es("https://api.open-meteo.com/v1/forecast?latitude=40.8259&longitude=-74.209&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,rain&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York").then(r => { let i = r.match(/((.|\n)*)/)[0], o = JSON.parse(i); stringer = str(o.hourly.temperature_2m), textSize(25), fill(0, 0, 0), textSize(20), cl = createElement("p", "Current Location: Montclair"), ocreateTable([[cmonth + " " + day() + " Max Temp: " + o.daily.temperature_2m_max[0] + "\xb0F", cmonth + " " + (day() + 1) + " Max Temp: " + o.daily.temperature_2m_max[1] + "\xb0F"], [cmonth + " " + day() + " Min Temp: " + o.daily.temperature_2m_min[0] + "\xb0F", cmonth + " " + (day() + 1) + " Min Temp: " + o.daily.temperature_2m_min[1] + "\xb0F"], ["Today's Weather code:", `${e[o.daily.weather_code[0] - 1]}`]]), cl.class("bbte"), ocreateTable([["Time", "7AM", "8AM", "11AM", "2 PM", "3 PM", "4 PM", "5 PM"], ["Temp", o.hourly.temperature_2m[7] + "\xb0F", o.hourly.temperature_2m[8] + "\xb0F", o.hourly.temperature_2m[11] + "\xb0F", o.hourly.temperature_2m[14] + "\xb0F", o.hourly.temperature_2m[15] + "\xb0F", o.hourly.temperature_2m[16] + "\xb0F", o.hourly.temperature_2m[17] + "\xb0F",], ["Precipitation", o.hourly.precipitation_probability[7] + "%", o.hourly.precipitation_probability[8] + "%", o.hourly.precipitation_probability[11] + "%", o.hourly.precipitation_probability[14] + "%", o.hourly.precipitation_probability[15] + "%", o.hourly.precipitation_probability[16] + "%", o.hourly.precipitation_probability[17] + "%"]]) }), es("https://api.open-meteo.com/v1/forecast?latitude=33.5883&longitude=-7.6114&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,rain&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=Europe%2FLondon").then(r => { let i = r.match(/((.|\n)*)/)[0], o = JSON.parse(i); stringer = str(o.hourly.temperature_2m), textSize(25), fill(0, 0, 0), textSize(20), cl = createElement("p", "Current Location: Maroc"), ocreateTable([[cmonth + " " + day() + " Max Temp: " + o.daily.temperature_2m_max[0] + "\xb0F", cmonth + " " + (day() + 1) + " Max Temp: " + o.daily.temperature_2m_max[1] + "\xb0F"], [cmonth + " " + day() + " Min Temp: " + o.daily.temperature_2m_min[0] + "\xb0F", cmonth + " " + (day() + 1) + " Min Temp: " + o.daily.temperature_2m_min[1] + "\xb0F"], ["Today's Weather code:", `${e[o.daily.weather_code[0] - 1]}`]]), cl.class("bbte"), ocreateTable([["Time", "7AM", "8AM", "11AM", "2 PM", "3 PM", "4 PM", "5 PM"], ["Temp", o.hourly.temperature_2m[7] + "\xb0F", o.hourly.temperature_2m[8] + "\xb0F", o.hourly.temperature_2m[11] + "\xb0F", o.hourly.temperature_2m[14] + "\xb0F", o.hourly.temperature_2m[15] + "\xb0F", o.hourly.temperature_2m[16] + "\xb0F", o.hourly.temperature_2m[17] + "\xb0F",], ["Precipitation", o.hourly.precipitation_probability[7] + "%", o.hourly.precipitation_probability[8] + "%", o.hourly.precipitation_probability[11] + "%", o.hourly.precipitation_probability[14] + "%", o.hourly.precipitation_probability[15] + "%", o.hourly.precipitation_probability[16] + "%", o.hourly.precipitation_probability[17] + "%"]]) }) } tm = "", cday = "", nday = "", cmonth = "", myStats();</script></body><html>
