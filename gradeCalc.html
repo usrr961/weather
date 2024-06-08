@@ -1,0 +1,82 @@
+<!doctype html><html><head></head><body><!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+<style>
+	button {height: 2.3rem;background-color: rgb(104, 104, 180);color: white;border-radius: 10px;border-color: transparent;}
+  .html,body {font-family: "Nunito";}
+  input {padding: 8px;background-color: rgba(red, green, blue, alpha);border-radius: 10px;}
+  select {background-color: rgb(104, 104, 180);border-color: transparent;border-radius: 10px;margin-left: 0.313rem;padding: 0.5px;min-height: 2rem;}
+  </style>
+  </head>
+<body>
+  <h1>Final/(exam) Grade Calculator</h1>
+<select onchange="run2()" id="select">
+  <option>Final Exam</option>
+  <option>Final Grade</option>
+</select>
+<input id="pa" placeholder="Projected Average"></input>
+<input id="dg" placeholder="Midterm grade"></input>
+<input id="fe" placeholder="Desired Final Grade"></input>
+<button id="subm" onclick="run()">Submit</button>
+<script>
+// (pa*90 + 5xdg + 5xFE) /100=FG
+/*
+(pa * 90 + 5*dg + 5*FE) / 100=FG
+pa *90 +5*dg +5*fe = 100 * fg
+fe = (100 * fg-pa *90 +5*dg)/5
+*/
+var run=function(){
+console.log(select.value)
+if(select.value=="Final Exam"){
+fg=(pa.value * 90 + 5 * dg.value + 5 * fe.value) / 100
+document.write(`You will get a ${fg}% with these conditions`)
+}
+else{
+feV = (100 * fe.value - (pa.value*90 + 5*dg.value))
+
+d = 20*fe.value - 18*pa.value - dg.value
+document.write(`You will need at least ${d}% with these conditions`)
+}
+}
+var run2=function(){
+if (select.value == "Final Grade"){
+fe.setAttribute('placeholder','Desired Final Exam Grade')
+}
+else {
+fe.setAttribute('placeholder', 'Desired Final Grade')
+}
+}
+</script>
+</body>
+</html><script type="text/javascript">// (pa*90 + 5xdg + 5xFE) /100=FG
+
+/*
+(pa * 90 + 5*dg + 5*FE) / 100=FG
+
+pa *90 +5*dg +5*fe = 100 * fg
+
+
+fe = (100 * fg-pa *90 +5*dg)/5
+*/
+var run=function(){
+  console.log(select.value)
+  if(select.value=="Final Exam"){
+    fg=(pa.value * 90 + 5 * dg.value + 5 * fe.value) / 100
+    document.write(`You will get a ${fg}% with these conditions`)
+  }
+  else{
+    feV = (100 * fe.value - (pa.value*90 + 5*dg.value))
+
+    d = 20*fe.value - 18*pa.value - dg.value
+    document.write(`You will need at least ${d}% with these conditions`)
+  }
+}
+var run2=function(){
+  if (select.value == "Final Grade"){
+    fe.setAttribute('placeholder','Desired Final Exam Grade')
+  }
+  else {
+    fe.setAttribute('placeholder', 'Desired Final Grade')
+  }
+}</script></body><html>
